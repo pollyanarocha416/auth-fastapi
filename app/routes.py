@@ -9,7 +9,6 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 router = APIRouter(prefix="/user")
 
-
 @router.post("/register")
 def user_register(
     user: User,

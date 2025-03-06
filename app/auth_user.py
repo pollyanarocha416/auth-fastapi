@@ -15,7 +15,9 @@ ALGORITHM = config("ALGORITHM")
 
 crypt_context = CryptContext(schemes=["sha256_crypt"])
 
+
 class UserUseCases:
+
     def __init__(self, db_session: Session):
         self.db_session = db_session
 
@@ -31,6 +33,7 @@ class UserUseCases:
                 status_code=status.HTTP_400_BAD_REQUEST, 
                 detail="User already exists"
             )
+
 
     def user_login(self, user: User, expires_in: int = 30):
         user_on_db = self.db_session.query(UserModel).filter_by(username=user.username).first()
