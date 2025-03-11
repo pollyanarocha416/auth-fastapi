@@ -74,6 +74,10 @@ variaveis que serão adicionadas ao executar o comando acima:
 `watchfiles==1.0.4`
 `websockets==15.0`
 
+## Execução do projeto
+
+comando para fazer a migração das alterações feitas: alembic revision --autogenerate -m ""
+comando para executar o projeto: uvicorn app.main:app --reload
 
 
 ### Ainda não foi realizado deploy desse projeto...
