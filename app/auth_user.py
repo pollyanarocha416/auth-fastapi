@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from fastapi import status
 from fastapi.exceptions import HTTPException
 from sqlalchemy.orm import Session
@@ -49,7 +49,7 @@ class UserUseCases:
                 detail="Invalid username or password",
             )
 
-        exp = datetime.utcnow() + timedelta(minutes=expires_in)
+        exp = datetime.now(timezone.utc) + timedelta(minutes=expires_in)
 
         payload = {"sub": user.username, "exp": exp}
 
