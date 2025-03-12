@@ -79,7 +79,6 @@ variaveis que serão adicionadas ao executar o comando acima:
 comando para fazer a migração das alterações feitas: alembic revision --autogenerate -m ""
 comando para executar o projeto: uvicorn app.main:app --reload
 
-
 ### Ainda não foi realizado deploy desse projeto...
 ## Deploy
 
